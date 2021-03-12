@@ -11,14 +11,15 @@ public class FileServiceImpl implements FileService {
 
     private Files files;
 
-  @Autowired
+    @Autowired
     public FileServiceImpl(@Qualifier("filesImpl") Files files) {
         this.files = files;
 
     }
+
     @Override
     public File readFile() {
-    return files.getFile();
+        return files.getFile();
     }
 
 }

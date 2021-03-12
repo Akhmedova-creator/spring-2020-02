@@ -13,8 +13,8 @@ class FilesImplTest {
     @Test
     @DisplayName("метод shouldCorrectGetTest")
     void shouldCorrectGetTest() {
-        File file=new File("questions.csv");
-        Files files=new FilesImpl();
-        assertEquals(file,files.getFile());
+        File file = new File("questions.csv");
+        Files files = new FilesImpl();
+        assertEquals(file, files.getFile());
     }
 }

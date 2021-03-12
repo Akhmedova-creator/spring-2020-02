@@ -20,9 +20,9 @@ public class Main {
         FileService fileService = context.getBean(FileServiceImpl.class);
         File csvFile = fileService.readFile();
         try {
-            List<String[]> list=csvFile.getList();
-            int []array=csvFile.getAnswers(list);
-            System.out.println(csvFile.getResultAnswer(csvFile.getCountAnswers(list,array)));
+            List<String[]> list = csvFile.getList();
+            int[] array = csvFile.getAnswers(list);
+            System.out.println(csvFile.getResultAnswer(csvFile.getCountAnswers(list, array)));
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -22,15 +22,15 @@ public class File {
 
     final private String negativeAnswer;
 
-    public File(String name, int countQuestions, int countCorrectAnswers, String positiveAnswer, String negativeAnswer  ) {
+    public File(String name, int countQuestions, int countCorrectAnswers, String positiveAnswer, String negativeAnswer) {
         this.name = name;
         this.countQuestions = countQuestions;
         this.countCorrectAnswers = countCorrectAnswers;
-        this.positiveAnswer=positiveAnswer;
-        this.negativeAnswer=negativeAnswer;
+        this.positiveAnswer = positiveAnswer;
+        this.negativeAnswer = negativeAnswer;
     }
 
-    public List<String []> getList() throws IOException {
+    public List<String[]> getList() throws IOException {
 
         //чтение CSV файла
         CSVReader reader = new CSVReader(new BufferedReader(new FileReader(name)),
@@ -38,7 +38,7 @@ public class File {
         return reader.readAll();
     }
 
-    public int [] getAnswers(List<String []> list) throws IOException {
+    public int[] getAnswers(List<String[]> list) throws IOException {
         int[] answers = new int[countQuestions];
         for (int i = 0; i < countQuestions; i++) {
             String temp = Arrays.toString(list.get(i));
@@ -46,10 +46,10 @@ public class File {
             Scanner sc = new Scanner(System.in);
             answers[i] = sc.nextInt();
         }
-        return  answers;
+        return answers;
     }
 
-    public int getCountAnswers(List<String []> list,int [] array) {
+    public int getCountAnswers(List<String[]> list, int[] array) {
         int countAnswers = 0;
         for (int i = 0; i < countQuestions; i++) {
             String temp = Arrays.toString(list.get(i + 1 + countQuestions));
@@ -57,14 +57,14 @@ public class File {
                 countAnswers++;
             }
         }
-    return countAnswers;
+        return countAnswers;
     }
 
     public String getResultAnswer(int countAnswers) {
         if (countCorrectAnswers <= countAnswers) {
             return negativeAnswer;
         } else
-            return positiveAnswer ;
+            return positiveAnswer;
     }
 
     @Override
@@ -78,7 +78,7 @@ public class File {
         File cmp = (File) csv;
         return cmp.name.equals(this.name) &&
                 cmp.countCorrectAnswers == this.countCorrectAnswers &&
-                cmp.countQuestions == this.countQuestions&&
+                cmp.countQuestions == this.countQuestions &&
                 cmp.negativeAnswer.equals(this.negativeAnswer) &&
                 cmp.positiveAnswer.equals(this.positiveAnswer);
     }

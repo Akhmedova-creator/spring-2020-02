@@ -21,7 +21,11 @@ public class Test {
 
     public Test(String path,int count) { this.path = path; this.count=count; }
 
-   @PostConstruct
+    @Autowired
+    public Test(PrintQue printQue) {
+        this.printQue = printQue;
+    }
+
     public void getTest() throws IOException {
 
         CSVReader reader = new CSVReader(new BufferedReader(new FileReader(path)), ',', '"', 0);

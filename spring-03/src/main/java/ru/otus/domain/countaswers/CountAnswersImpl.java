@@ -3,7 +3,6 @@ package ru.otus.domain.countaswers;
 import org.springframework.stereotype.Service;
 import ru.otus.domain.answers.Answers;
 import ru.otus.domain.correctAnswers.CorrectAnswers;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -11,16 +10,16 @@ import java.util.List;
 public class CountAnswersImpl implements CountAnswers {
 
 
-    private CorrectAnswers printQue;
+    final private CorrectAnswers printQue;
 
-    private Answers answers;
+    final private Answers answers;
 
     public CountAnswersImpl(CorrectAnswers printQue, Answers answers) {
         this.printQue = printQue;
         this.answers = answers;
     }
 
-    public int getCountAnswers() throws IOException {
+    public int getCountAnswers() {
 
         List<Integer> array=printQue.print();
         List <Integer> ans=answers.getAnswers();

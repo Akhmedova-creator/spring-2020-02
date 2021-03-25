@@ -9,7 +9,7 @@ import java.io.IOException;
 @Service
 public class TestResultImpl implements TestResult {
 
-    private CountAnswers countAnswers;
+    final private CountAnswers countAnswers;
 
     @Autowired
     public TestResultImpl(CountAnswers countAnswers) {
@@ -19,7 +19,7 @@ public class TestResultImpl implements TestResult {
     private final int ANSWERCOUNT=4;
 
     @Override
-    public String getResultAnswer() throws IOException {
+    public String getResultAnswer(){
         if (countAnswers.getCountAnswers()>=ANSWERCOUNT) {
             return TextAnswer.PositiveText.getText() ;
         } else return TextAnswer.NegativeText.getText();

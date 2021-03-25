@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface Answers {
 
-    public List<Integer> getAnswers() throws IOException;
+    public List<Integer> getAnswers();
 }

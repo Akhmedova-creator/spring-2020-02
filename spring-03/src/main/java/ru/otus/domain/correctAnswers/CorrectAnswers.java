@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface CorrectAnswers {
 
-    List<Integer> print() throws IOException;
+    List<Integer> print();
 
     public void setAnswers(List<Integer> answers);
 

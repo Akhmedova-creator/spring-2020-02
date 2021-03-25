@@ -19,7 +19,7 @@ public class OtherAnswers implements CorrectAnswers {
     private  List<Integer> answers;
 
     @Override
-    public List<Integer> print() throws IOException {
+    public List<Integer> print(){
         return answers;
     }
 

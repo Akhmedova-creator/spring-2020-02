@@ -10,4 +10,5 @@ public class JavaConfig {
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer(){
         return new PropertySourcesPlaceholderConfigurer();
     }
+
 }

@@ -17,7 +17,7 @@ import java.util.Objects;
 public class InputStreamImpl implements InptStream {
 
     final private String pathName;
-    final private int SIZELIST=5;
+    final private int SIZELIST = 5;
 
     public int getSIZELIST() {
         return SIZELIST;
@@ -28,29 +28,29 @@ public class InputStreamImpl implements InptStream {
         this.pathName = conf.getPathName();
     }
 
-        public List<String[]> getList() {
-            List<String[]> list = new ArrayList<>();
-            CSVReader reader = null;
-            //чтение CSV файла
-            try {
-                reader = new CSVReader(new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(pathName)))),
-                        ',', '"', 0);
-                list = reader.readAll();
-            } catch (IOException e) {
-                System.out.println("Ошибка" + e.getMessage());
-            } finally {
-                {
-                    try {
-                        if (reader != null) {
-                            reader.close();
-                        }
-                    } catch (IOException e) {
-                        System.out.println("Ошибка при закрытии файла" + e.getMessage());
+    public List<String[]> getList() {
+        List<String[]> list = new ArrayList<>();
+        CSVReader reader = null;
+        //чтение CSV файла
+        try {
+            reader = new CSVReader(new BufferedReader(new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(pathName)))),
+                    ',', '"', 0);
+            list = reader.readAll();
+        } catch (IOException e) {
+            System.out.println("Ошибка" + e.getMessage());
+        } finally {
+            {
+                try {
+                    if (reader != null) {
+                        reader.close();
                     }
+                } catch (IOException e) {
+                    System.out.println("Ошибка при закрытии файла" + e.getMessage());
                 }
             }
-            return Objects.requireNonNullElseGet(list, () -> (List<String[]>) new ListNullException("Пустой  список"));
         }
+        return Objects.requireNonNullElseGet(list, () -> (List<String[]>) new ListNullException("Пустой  список"));
+    }
 
 }
 

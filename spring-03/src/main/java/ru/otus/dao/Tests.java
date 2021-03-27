@@ -6,5 +6,5 @@ import ru.otus.domain.testResult.TestResult;
 import java.io.IOException;
 
 public interface Tests {
-    TestResult getResult() throws IOException;
+    TestResult getResult();
 }

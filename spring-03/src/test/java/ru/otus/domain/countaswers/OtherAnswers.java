@@ -11,20 +11,22 @@ import java.util.List;
 
 @Component
 @ConditionalOnProperty(
-        value="enable.bean",
-        havingValue="false"
+        value = "enable.bean",
+        havingValue = "false"
 )
 public class OtherAnswers implements CorrectAnswers {
 
-    private  List<Integer> answers;
+    private List<Integer> answers;
 
     @Override
-    public List<Integer> print(){
+    public List<Integer> getAnswers() {
         return answers;
     }
 
     @Override
     public void setAnswers(List<Integer> answers) {
-        this.answers=answers;
+        this.answers = answers;
     }
+
+
 }

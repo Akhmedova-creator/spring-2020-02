@@ -16,12 +16,12 @@ public class TestResultImpl implements TestResult {
         this.countAnswers = countAnswers;
     }
 
-    private final int ANSWERCOUNT=4;
+    private final int ANSWERCOUNT = 4;
 
     @Override
-    public String getResultAnswer(){
-        if (countAnswers.getCountAnswers()>=ANSWERCOUNT) {
-            return TextAnswer.PositiveText.getText() ;
+    public String getResultAnswer() {
+        if (countAnswers.getCountAnswers() >= ANSWERCOUNT) {
+            return TextAnswer.PositiveText.getText();
         } else return TextAnswer.NegativeText.getText();
     }
 }

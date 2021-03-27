@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,10 +19,10 @@ class AnswersImplTest {
 
     @DisplayName("Тестирование метода getAnswers")
     @Test
-    void shouldHaveCorrectGetAnswers() throws IOException {
+    void shouldHaveCorrectGetAnswers() {
 
-       List<Integer> ans= Arrays.asList(8,16,4,4,16);
-       assertEquals(ans,answers.getAnswers());
+        List<Integer> ans = Arrays.asList(8, 16, 4, 4, 16);
+        assertEquals(ans, answers.getAnswers());
 
 
     }

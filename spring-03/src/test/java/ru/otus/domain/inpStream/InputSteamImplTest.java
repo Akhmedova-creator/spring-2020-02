@@ -22,7 +22,7 @@ class InputSteamImplTest {
     private InptStream inputSteam;
 
     @Test
-    public void shouldHaveCorrectGetList() throws IOException {
+    public void shouldHaveCorrectGetList() {
 
         List<String[]> exp = Arrays.asList(new String[]{"How many bytes does the int data type have?"},
                 new String[]{"How many bytes does the double data type have?"},

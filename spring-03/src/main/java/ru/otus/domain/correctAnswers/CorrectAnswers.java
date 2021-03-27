@@ -5,8 +5,7 @@ import java.util.List;
 
 public interface CorrectAnswers {
 
-    List<Integer> print();
-
     public void setAnswers(List<Integer> answers);
 
+    List<Integer> getAnswers();
 }

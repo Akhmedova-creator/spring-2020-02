@@ -13,7 +13,7 @@ public class TestsImpl implements Tests {
 private TestResult testResult;
 
     @Override
-    public TestResult getResult() throws IOException {
+    public TestResult getResult() {
       return  testResult;
     }
 }

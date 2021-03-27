@@ -1,11 +1,13 @@
 package ru.otus.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.shell.standard.ShellComponent;
+import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.standard.ShellOption;
 import org.springframework.stereotype.Service;
 import ru.otus.dao.Tests;
 import ru.otus.domain.testResult.TestResult;
-
-import java.io.IOException;
 
 @Service
 public class TestServiceImpl implements TestService {
@@ -18,6 +20,6 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public TestResult getTest () throws IOException {  return tests.getResult();}
+    public TestResult getTest () {  return tests.getResult();}
 
 }

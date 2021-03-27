@@ -3,16 +3,15 @@ package ru.otus.domain.correctAnswers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
-import ru.otus.domain.ListNullException;
 import ru.otus.domain.questions.Questions;
-import java.io.IOException;
+
 import java.util.*;
 
 
 @Component
 @ConditionalOnProperty(
-        value="enable.bean",
-        havingValue="true"
+        value = "enable.bean",
+        havingValue = "true"
 )
 public class CorrectAnswersImpl implements CorrectAnswers {
 
@@ -29,7 +28,7 @@ public class CorrectAnswersImpl implements CorrectAnswers {
     }
 
     @Override
-    public List<Integer> print() {
+    public List<Integer> getAnswers() {
         //локализация
         ResourceBundle bundle = ResourceBundle.getBundle("messages", new Locale("ru", "RU"));
 

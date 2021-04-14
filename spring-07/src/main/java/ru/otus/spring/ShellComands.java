@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import ru.otus.spring.dao.BooksDao;
+import ru.otus.spring.domain.Authors;
 import ru.otus.spring.domain.Book;
+import ru.otus.spring.domain.Genre;
 
 @ShellComponent
 public class ShellComands {
@@ -19,7 +21,10 @@ public class ShellComands {
 
     @ShellMethod(value = "command", key = {"insert"})
     public String insert() {
-        Book book = new Book("Хочу и буду", 2, 2);
+        String title = "Хочу и буду";
+        Genre genre = new Genre("Наука");
+        Authors authors= new Authors("Михаил","Лабковкий");
+        Book book = new Book(title,genre,authors);
         dao.insert(book);
         return String.format("вставили новую книгу: %s", book);
     }

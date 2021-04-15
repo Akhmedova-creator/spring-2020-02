@@ -1,19 +1,25 @@
 package ru.otus.spring.domain;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+import javax.persistence.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity(name = "genre")
+@Table(name = "genre")
 public class Genre {
-    private final String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name",nullable = false)
+    private String name;
 
     public Genre(String name) {
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Genre{" +
-                "name='" + name + '\'' +
-                '}';
     }
 }

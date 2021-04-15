@@ -1,22 +1,26 @@
 package ru.otus.spring.domain;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+import javax.persistence.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity(name = "authors")
+@Table(name="authors")
 public class Authors {
-    private final String first_name;
-    private final String last_name;
 
-    public Authors(String first_name, String last_name) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Override
-    public String toString() {
-        return "Authors{" +
-                "first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                '}';
-    }
+    @Column(name = "first_name",nullable = false)
+    private String first_name;
+
+    @Column(name = "last_name",nullable = false)
+    private String last_name;
+
 }

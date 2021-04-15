@@ -10,4 +10,8 @@ insert into books (title,genreId,authorsId) values ('Джава.Основы',1,
 insert into books (title,genreId,authorsId) values ('Джава.Spring-фреймворк',1,1);
 insert into books (title,genreId,authorsId) values ('50 оттенков серого',2,2);
 
+insert into comments (COMMENT_DATA,COMMENT_NAME,BOOKID) values('2021-12-31','Книга была испавлена',1);
+insert into comments (COMMENT_DATA,COMMENT_NAME,BOOKID) values ('2019-12-31','Книгу дали на доработку',1);
+
+
 

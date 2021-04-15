@@ -10,17 +10,17 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "authors")
-@Table(name="authors")
+@Table(name = "authors")
 public class Authors {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name",nullable = false)
+    @Column(name = "first_name", nullable = false)
     private String first_name;
 
-    @Column(name = "last_name",nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String last_name;
 
 }

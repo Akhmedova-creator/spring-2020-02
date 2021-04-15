@@ -17,7 +17,7 @@ public class BooksDaoRepositoriesJPAImpl implements BooksDaoRepositoriesJPA {
 
     @Override
     public Integer count() {
-        TypedQuery<Books> query = em.createQuery("select b from books b" ,Books.class);
+        TypedQuery<Books> query = em.createQuery("select b from books b", Books.class);
         return query.getResultList().size();
 
     }
@@ -27,8 +27,7 @@ public class BooksDaoRepositoriesJPAImpl implements BooksDaoRepositoriesJPA {
         if (!book.getId().equals(0l)) {
             em.persist(book);
             return book;
-        }
-        else
+        } else
             return em.merge(book);
     }
 
@@ -43,25 +42,25 @@ public class BooksDaoRepositoriesJPAImpl implements BooksDaoRepositoriesJPA {
 
     @Override
     public void delete(long id) {
-        Query query=em.createQuery("delete  from books where id=:id");
-        query.setParameter("id",id);
+        Query query = em.createQuery("delete  from books where id=:id");
+        query.setParameter("id", id);
         query.executeUpdate();
     }
 
     @Override
-    public void update(String title,long id) {
+    public void update(String title, long id) {
         Query query = em.createQuery("update books" +
                 " set title=:title" +
                 " where id=:id");
-        query.setParameter("title",title);
-        query.setParameter("id",id);
+        query.setParameter("title", title);
+        query.setParameter("id", id);
         query.executeUpdate();
     }
 
 
     @Override
     public List<Books> getAll() {
-        TypedQuery<Books> query = em.createQuery("select b from books b" ,Books.class);
+        TypedQuery<Books> query = em.createQuery("select b from books b", Books.class);
         return query.getResultList();
     }
 }

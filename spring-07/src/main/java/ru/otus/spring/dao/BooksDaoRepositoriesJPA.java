@@ -5,9 +5,9 @@ import ru.otus.spring.domain.Books;
 import java.util.List;
 
 public interface BooksDaoRepositoriesJPA {
-   Integer count();
+    Integer count();
 
-   Books insert(Books book);
+    Books insert(Books book);
 
     Books getById(Long id);
 

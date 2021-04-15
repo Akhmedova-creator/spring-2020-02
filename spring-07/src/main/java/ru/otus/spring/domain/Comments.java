@@ -13,16 +13,16 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity(name = "comments")
 @Data
-@Table(name="comments")
+@Table(name = "comments")
 public class Comments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="comment_name")
+    @Column(name = "comment_name")
     private String commentName;
 
-    @Column(name="comment_data")
+    @Column(name = "comment_data")
     private LocalDate commentData;
 
 }

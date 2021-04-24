@@ -34,6 +34,12 @@ public class Books {
     @JoinColumn(name = "bookid")
     private List<Comments> comments;
 
+    public Books(String title, Genre genre, Authors authors, List<Comments> comments) {
+        this.title = title;
+        this.genre = genre;
+        this.authors = authors;
+        this.comments = comments;
+    }
 }
 
 

@@ -50,14 +50,19 @@ class BooksDaoJdbcTest {
     void shouldInsertBook() {
         String title = "Гарри Потор";
         val genre = new Genre("Фантастика");
-        val authors = new Authors(0l,"Карл", "Маркс");
-        List<Comments> comments= Arrays.asList(new Comments(0l,"Исправили имя", LocalDate.now()));
-        val book = new Books(0l,title, genre, authors,comments);
+        val authors = new Authors("Карл", "Маркс");
+        List<Comments> comments= Arrays.asList(new Comments("Исправили имя", LocalDate.now()));
+        val book = new Books(title, genre, authors,comments);
         booksDaoJdbc.insert(book);
 
-        assertThat(book.getId()).isGreaterThan(0);
+       assertThat(book.getId()).isGreaterThan(0);
 
         val actualBooks = em.find(Books.class, book.getId());
+
+        System.out.println(actualBooks.getTitle());
+        System.out.println(actualBooks.getAuthors());
+        System.out.println(actualBooks.getComments());
+        System.out.println(actualBooks.getGenre());
 
         assertThat(actualBooks).isNotNull().matches(b -> !b.getTitle().equals(""))
                 .matches(b -> b.getAuthors() != null)

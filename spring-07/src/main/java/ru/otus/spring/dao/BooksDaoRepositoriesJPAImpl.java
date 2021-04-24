@@ -24,7 +24,7 @@ public class BooksDaoRepositoriesJPAImpl implements BooksDaoRepositoriesJPA {
 
     @Override
     public Books insert(Books book) {
-        if (!book.getId().equals(0l)) {
+        if (book.getId() == null) {
             em.persist(book);
             return book;
         } else
